@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - Nepali Treasures</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>🇳🇵 Nepali Treasures</h1>
+            <nav>
+                <a href="index.html">Products</a>
+                <a href="cart.html" class="active cart-link">
+                    Cart <span id="cart-count" class="cart-badge">0</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <h2>Your Shopping Cart</h2>
+        
+        <!-- Cart Items Container -->
+        <div id="cart-items" class="cart-container">
+            <!-- Cart items will be loaded here by JavaScript -->
+        </div>
+
+        <!-- Cart Summary -->
+        <div class="cart-summary">
+            <div class="summary-row">
+                <span>Subtotal:</span>
+                <span id="cart-total" class="total-amount">£0.00</span>
+            </div>
+            <button id="checkout-btn" class="btn btn-primary">Proceed to Checkout</button>
+            <a href="index.html" class="btn btn-secondary">Continue Shopping</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Nepali Treasures - Final Year Project Prototype</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/products.js"></script>
+    <script src="js/haptics.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>
