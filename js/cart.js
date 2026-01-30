@@ -54,6 +54,9 @@ const Cart = {
     // ============================================
     
     addItem: function(productId, quantity = 1) {
+        console.log('=== ADD ITEM CALLED ===');
+        console.log('Product ID:', productId);
+        
         // Find product in products array
         const product = products.find(p => p.id === productId);
         
@@ -85,13 +88,27 @@ const Cart = {
         this.save();
         this.updateUI();
         
-        // Trigger haptic feedback
+        // Trigger haptic feedback with detailed logging
+        console.log('Attempting haptic feedback...');
+        console.log('HapticFeedback type:', typeof HapticFeedback);
+        
         if (typeof HapticFeedback !== 'undefined') {
-            HapticFeedback.vibrate('addToCart');
+            console.log('HapticFeedback object exists');
+            console.log('HapticFeedback.vibrate type:', typeof HapticFeedback.vibrate);
+            
+            try {
+                const result = HapticFeedback.vibrate('addToCart');
+                console.log('Vibration call result:', result);
+            } catch (error) {
+                console.error('Error calling vibrate:', error);
+            }
+        } else {
+            console.error('HapticFeedback is undefined!');
         }
         
         // Show notification
         this.showNotification('✓ ' + product.name + ' added to cart');
+        console.log('=== ADD ITEM COMPLETE ===');
     },
     
     // ============================================
@@ -108,6 +125,7 @@ const Cart = {
         this.updateUI();
         
         // Trigger haptic feedback
+        console.log('Attempting remove haptic feedback...');
         if (typeof HapticFeedback !== 'undefined') {
             HapticFeedback.vibrate('removeFromCart');
         }
