@@ -127,5 +127,3 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Device support:', HapticFeedback.isSupported());
     console.log('User enabled:', HapticFeedback.isEnabled());
 });
-```
-
